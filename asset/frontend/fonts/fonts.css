@@ -1,0 +1,37 @@
+@import 'MarkSimonsonProximaNovaBold/MarkSimonsonProximaNovaBold.css';
+@font-face {
+    font-family: 'sfu_futurabold';
+    src: url('sfufuturabold-webfont.eot');
+    src: url('sfufuturabold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('sfufuturabold-webfont.woff2') format('woff2'),
+    url('sfufuturabold-webfont.woff') format('woff'),
+    url('sfufuturabold-webfont.ttf') format('truetype'),
+    url('sfufuturabold-webfont.svg#sfu_futurabold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'proxima_nova_rgregular';
+    src: url('mark_simonson_-_proxima_nova_regular-webfont.eot');
+    src: url('mark_simonson_-_proxima_nova_regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('mark_simonson_-_proxima_nova_regular-webfont.woff2') format('woff2'),
+    url('mark_simonson_-_proxima_nova_regular-webfont.woff') format('woff'),
+    url('mark_simonson_-_proxima_nova_regular-webfont.ttf') format('truetype'),
+    url('mark_simonson_-_proxima_nova_regular-webfont.svg#proxima_nova_rgregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'sfu_futuraregular';
+    src: url('sfufuturaregular-webfont.eot');
+    src: url('sfufuturaregular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('sfufuturaregular-webfont.woff2') format('woff2'),
+    url('sfufuturaregular-webfont.woff') format('woff'),
+    url('sfufuturaregular-webfont.ttf') format('truetype'),
+    url('sfufuturaregular-webfont.svg#sfu_futuraregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

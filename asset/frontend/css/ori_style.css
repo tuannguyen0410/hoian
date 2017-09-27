@@ -1,0 +1,47 @@
+/* CSS Document */
+
+nav ul li.active a{
+	color:#61a78b;	
+}
+
+footer .top-footer ul li {
+    display: table-row;
+}
+
+footer .top-footer ul li a{
+	color:#fff;
+	padding-top: 20px;
+    display: inline-table;
+}
+footer .top-footer ul li a:hover{
+	color:#61a78b;
+}
+.ori-delete-tour{
+	background: #61a78b;
+    padding: 5px;
+    margin-right: 10px;
+    color: #fff;
+}
+p.notice {
+    color: red;
+    margin-top: 5px;
+}
+.advisor-pop{
+	right:0;
+}
+.advisor-pop .close2{
+    width: 40px;
+    height: 40px;
+    background: #000;
+    border-radius: 50%;
+    color: #fff;
+    z-index: 888;
+    position: absolute;
+    right: 5px;
+    left: auto;
+	font-size: 25px;
+    padding: 4px 10px;
+}
+.advisor-pop img{
+	width:auto;
+}

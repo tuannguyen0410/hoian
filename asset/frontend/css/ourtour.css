@@ -1,0 +1,99 @@
+ .box-tour
+ {
+ 	z-index: 99;
+    position: relative;
+    background: #fff;
+    margin:20px 0;
+}
+.tour-banner
+{
+	position: relative;
+    overflow: hidden;
+    background-color: black;
+
+}
+.tour-banner img
+{
+	max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    width: 100%;
+}
+.banner-title
+{
+    width: 100%;
+    padding: 0px 50px 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.banner-title h1
+{
+	text-align: center;
+    font-size: 80px;
+    font-weight: 500;
+}
+.banner-des
+{
+	text-align: center;
+  
+}
+.banner-title h2
+{
+   background-position: center bottom;
+    height: auto;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+.line3
+{
+	background: url(../images/line-white.png) no-repeat scroll center center rgba(0, 0, 0, 0);
+    height: 12px;
+    width: 100%;
+}
+.content-title{
+    border-top: 1px solid #61a78b;
+    border-bottom: 1px solid #61a78b;
+    height: 50px;
+    line-height: 50px;
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 0px;
+}
+.content-time
+{
+	background-color: black;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 17px;
+   
+}
+.content-text
+{
+	margin: 10px 0;
+	color: #000;
+}
+
+@media screen and (max-width: 767px)
+{
+.banner-title h1
+{
+
+    font-size: 40px !important;
+    font-weight: 500;
+}.banner-des
+{
+
+   display: none;
+}
+}

