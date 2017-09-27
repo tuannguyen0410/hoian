@@ -10,7 +10,7 @@
       </div>
 
     </div>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
     <script type="text/javascript" src="../saigon/asset/frontend/js/jquery.shorten.js"></script>
     <script language="javascript">
       $(document).ready(function() {
@@ -79,7 +79,7 @@
               </style>
               <div class="col-md-6 ori-filer-btn col-md-offset-1">
 
-                <div>
+              <!--   <div>
                   <h3>PICK UP BY</h3>
 
                   <button class="center-block white-btn ori_button ori_button all" onclick="ori_filter1('all');" style="'margin-left:0px;':''?>;margin-right: 16px;">All</button>
@@ -88,7 +88,7 @@
 
                   <?php }} ?>
 
-                </div>
+                </div> -->
                 <script>
                   function ori_filter1(id){
                // $('.owl-carousel1').fadeIn();
@@ -281,14 +281,17 @@
           </div>
         </div> -->
         <div style="margin-top: 100px;"></div>
+        <?php if(!empty($article)){ foreach($article as $key=>$val){ ?>
+        <?php $cates = explode(',', $val->category_id);?>
+
         <div class="box-tour">
           <div class="tour-banner">
-            <img src="https://localhost/saigon/media/screen-shot-2017-09-22-at-9-81.png">
+            <img src="<?=PATH_URL.'media/'.$val->images?>">
             <div class="banner-title">
-              <h1>The Real Vietnam</h1>
+              <h1><?=$val->name;?></h1>
               <h2 class="line3"></h2>
               <p class="banner-des">
-                See Hoi An as the locals do with our Rural Village Experience. Relax as we bring you through breathtaking countryside and waterways while stopping to see families &amp; their crafts.See Hoi An as the locals do with our Rural Village Experience. Relax as we bring you through breathtaking countryside and waterways while stopping to see families &amp; their crafts.See Hoi An as the locals do with our Rural Village Experience. Relax as we bring you through breathtaking countryside and waterways while stopping to see families &amp; their crafts.
+                <?=$val->description;?> 
 
               </p>
             </div>
@@ -297,123 +300,179 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <h3 class="content-title">Rural Villages Experience – Hoi An, Central Vietnam</h3>
+              <h3 class="content-title"><?=$val->name;?></h3>
             </div>
+          </div>
+          <div class="row">
             <div class="col-md-6">
               <div class="content-tour">
-               <span class="content-time">Tour Runs Daily 1:30pm – 5:00pm</span>
+               <div class="content-time time"><i class="fa fa-clock-o" aria-hidden="true"></i> TIME: <span>Departures <?=$val->keywords;?></span></div>
+               <?=$val->shortcontent;?>
+             </div>
+           </div>
 
-               <p class="content-text">Rural Villages Experience – Hoi an: Experience local life in the slow lane.
+           <div class="col-md-6 content-text">
+            <?=$val->shortcontent;?>
 
-                Setting off from Café Zoom in Hoi An, we head out west along the banks of the Thu Bon River, first stopping at a bustling local fish market before heading into the rice paddy rich countryside and local villages, stopping to meet a local family producing local rice crackers. Crossing a bridge over the Thu Bon River takes us through more quiet villages and then into beautiful farmlands, where we take a break for a local speciality dish while surrounded by seasonal vegetables in the picturesque fields of corn, eggplants, sweet potatoes, cucumbers, and herbs (location is seasonal).
-
-                As the sun starts to go down, we set off through the rice paddies, passing duck farms, visit a local mat weaving family and then ride along by the prawn farms and over the river to visit a charming family home where they produce the local & potent favourite brew – rice wine. It’s then a short ride over the Cam Kim Bridge into Hoi An as the sun begins to set on this beautiful heritage town.
-
-
-                Highlights – local fish market, zooming through the countryside, rice cracker family, local food on tour, mat weaving family, home rice wine distillery.</p>
-              </div>
-            </div>
-
-            <div class="col-md-6">
-             <p class="content-text"> Rural Villages Experience – Hoi an: Experience local life in the slow lane.
-
-              Setting off from Café Zoom in Hoi An, we head out west along the banks of the Thu Bon River, first stopping at a bustling local fish market before heading into the rice paddy rich countryside and local villages, stopping to meet a local family producing local rice crackers. Crossing a bridge over the Thu Bon River takes us through more quiet villages and then into beautiful farmlands, where we take a break for a local speciality dish while surrounded by seasonal vegetables in the picturesque fields of corn, eggplants, sweet potatoes, cucumbers, and herbs (location is seasonal).
-
-              As the sun starts to go down, we set off through the rice paddies, passing duck farms, visit a local mat weaving family and then ride along by the prawn farms and over the river to visit a charming family home where they produce the local & potent favourite brew – rice wine. It’s then a short ride over the Cam Kim Bridge into Hoi An as the sun begins to set on this beautiful heritage town.
-
-
-              Highlights – local fish market, zooming through the countryside, rice cracker family, local food on tour, mat weaving family, home rice wine distillery.
-            </p>
           </div>
-
-          
-
         </div>
-      </div>
+        <div class="row">
+          <div class="col-md-6">
+
+            <div id="wowslider-container1">
+              <div class="ws_images"><ul>
+               <?php $img = $this->model->getListContent('images', "FIND_IN_SET(article_id, '".$val->id."') > 0", null, null, "images"); ?>
+               <?php $i=0; ?> 
+               <?php if(!empty($img)){ foreach($img as $ig){ ?>
+               <?php $i++;?>
+               <?php if($i==1 || $i==2 || $i==3 || $i==5){$aaa = '4';}
+               elseif($i==4){$aaa = '8';}
+               elseif($i==6){$aaa = '5';}
+               else{$aaa = '7';}
+               ?>
+               <li><img src="<?=PATH_URL.'media/'.$ig->images?>" /></li>
+
+               <?php if($i == 7){ $i=0;} ?>
+                <?php }} ?>
+             </ul>
+           </div>
+           <div class="ws_thumbs">
+            <div>
+             <?php $img = $this->model->getListContent('images', "FIND_IN_SET(article_id, '".$val->id."') > 0", null, null, "images"); ?>
+             <?php $i=0; ?> 
+             <?php if(!empty($img)){ foreach($img as $ig){ ?>
+             <?php $i++;?>
+             <?php if($i==1 || $i==2 || $i==3 || $i==5){$aaa = '4';}
+             elseif($i==4){$aaa = '8';}
+             elseif($i==6){$aaa = '5';}
+             else{$aaa = '7';}
+             ?>
+
+             <a href="#" title="img4500-822"><img src="<?=PATH_URL.'media/'.$ig->images?>" alt="" /></a>
+             <?php if($i == 7){ $i=0;} ?>
+             
+                <?php }} ?>
+           </div>
+           </div>
+       </div>  
 
 
 
-      
-    </section>
+    
+     </div>
+     <div class="col-md-6">
 
-    <section id="review" class="rew" style="margin-top: 100px;">
-      <div class="container">
-        <h1>tripadvisor reviews</h1>
-        <img src="<?=PATH_URL?>asset/frontend/images/line.png" class="line-right">
-        <div class="flexslider">
-          <ul class="slides">
-            <?php if(!empty($reviews)){ foreach($reviews as $key=>$val) { ?>    
-            <li>
-              <div class="">
-                <h3 class="text-center"><?=stripslashes($val->name)?></h3>
-                <div class="info text-center"><?=stripslashes($val->links)?></div>
-                <div><?=stripslashes($val->content)?></div>
-              </div>
-            </li>
-            <?php }} ?>
-          </ul>
+      <div class="ourtour-form book-tour">
+        <div class="car">TRANSPORTATION: <span>Car </span></div>
+        <div class="service">OPTIONAL SERVICES: <span>PRIVATE </span></div>
+
+        <div class="price-block">
+
+         <div class="price"><span class="usd">
+          <?php 
+          if($val->title=="0"){echo " PRIVATE";} else
+          {
+
+            echo "$".$val->title;}
+
+            ?> 
+
+            <form action="<?=PATH_URL?>home/add_tour" method="post" enctype="multipart/form-data">
+              <input type="hidden" name="id" value="<?=$val->id;?>">
+              <button type="submit" class="center-block gold-btn">book now</button>
+            </form>
+          </div>
         </div>
+
       </div>
-    </section>
-
-    <style>
-      .ori-filer-btn h3{
-        padding-top: 50px;
-        color: #fff;
-        text-align: right;
-        font-family: "proxima_nova_rgregular";
-      }
-      .ori-filer-btn>div{
-        text-align: right;
-        padding-top: 20px;
-      }
-      .ori-filer-btn .ori_button{
-        background:none;    
-        display: inline-block;
-        margin-left: 15px;
-      }
-      .ori-filer-btn .ori_button.active, .ori-filer-btn .ori_button.hover{
-        background:#61a78b; 
-        color:#fff;
-      }
-      .owl-carousel1 .ori-images1{
-        position:relative;  
-      }
-      .owl-carousel1 .ori-images1 .ori_price1{
-        position: absolute;
-        background: #313638;
-        font-size: 24px;
-        padding: 5px 30px;
-        left: 0;
-        top: 0;
-        color:#fff; 
-        font-family: "sfu_futurabold";
-      }
-      .owl-carousel1 .ori-images1 .ori_cat1{
-        position: absolute;
-        bottom: 5px;
-        left: 30px;
-      }
-      .owl-carousel1 .ori-images1 .ori_cat1 img{
-        margin-right:15px;
-      }
-      @media (max-width:767px) {
-        .ori-filer-btn h3 {
-          padding-top:30px !important;
-          color: #000;
-        }
-        #ori_scroll_ourtour {
-          top: -200px !important;
-        }
-      }
-      @media (min-width: 768px) and (max-width: 991px) {
-        .ori-filer-btn h3 {
-          padding-top:50px !important;
-          color: #000;
-        }
-
-      }
+    </div>
 
 
-    </style>
+
   </div>
+</div>
+<?php } }?>
+
+</section>
+
+<section id="review" class="rew" style="margin-top: 100px;">
+  <div class="container">
+    <h1>tripadvisor reviews</h1>
+    <img src="<?=PATH_URL?>asset/frontend/images/line.png" class="line-right">
+    <div class="flexslider">
+      <ul class="slides">
+        <?php if(!empty($reviews)){ foreach($reviews as $key=>$val) { ?>    
+        <li>
+          <div class="">
+            <h3 class="text-center"><?=stripslashes($val->name)?></h3>
+            <div class="info text-center"><?=stripslashes($val->links)?></div>
+            <div><?=stripslashes($val->content)?></div>
+          </div>
+        </li>
+        <?php }} ?>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ori-filer-btn h3{
+    padding-top: 50px;
+    color: #fff;
+    text-align: right;
+    font-family: "proxima_nova_rgregular";
+  }
+  .ori-filer-btn>div{
+    text-align: right;
+    padding-top: 20px;
+  }
+  .ori-filer-btn .ori_button{
+    background:none;    
+    display: inline-block;
+    margin-left: 15px;
+  }
+  .ori-filer-btn .ori_button.active, .ori-filer-btn .ori_button.hover{
+    background:#61a78b; 
+    color:#fff;
+  }
+  .owl-carousel1 .ori-images1{
+    position:relative;  
+  }
+  .owl-carousel1 .ori-images1 .ori_price1{
+    position: absolute;
+    background: #313638;
+    font-size: 24px;
+    padding: 5px 30px;
+    left: 0;
+    top: 0;
+    color:#fff; 
+    font-family: "sfu_futurabold";
+  }
+  .owl-carousel1 .ori-images1 .ori_cat1{
+    position: absolute;
+    bottom: 5px;
+    left: 30px;
+  }
+  .owl-carousel1 .ori-images1 .ori_cat1 img{
+    margin-right:15px;
+  }
+  @media (max-width:767px) {
+    .ori-filer-btn h3 {
+      padding-top:30px !important;
+      color: #000;
+    }
+    #ori_scroll_ourtour {
+      top: -200px !important;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .ori-filer-btn h3 {
+      padding-top:50px !important;
+      color: #000;
+    }
+
+  }
+
+
+</style>
+</div>

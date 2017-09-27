@@ -42,13 +42,15 @@
     <link href="<?=PATH_URL?>asset/frontend/css/style.css" rel="stylesheet">
     <link href="<?=PATH_URL?>asset/frontend/css/ori_style.css" rel="stylesheet">
     <link href="<?=PATH_URL?>asset/frontend/css/owl.carousel.css" rel="stylesheet">
-    <link href="<?=PATH_URL?>asset/frontend/css/ourtour.css" rel="stylesheet">
 
+
+    <link href="<?=PATH_URL?>asset/frontend/css/ourtour.css" rel="stylesheet">
+    <link href="<?=PATH_URL?>asset/frontend/css/slider.css" rel="stylesheet">
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <!--     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
 </head>
 <style type="text/css">
     .fontdt{display: none;}
@@ -62,7 +64,7 @@
     <div class="pop-top hidden-xs ori-banner-all-top">
         <div class="container">
             <div class="content">
-                
+
                 <form action="http://saigonadventure.com/home/add_tour" method="post" enctype="multipart/form-data">
                     <?=stripslashes($val->name)?>
                     <input type="hidden" name="id" value="67">              
@@ -77,11 +79,11 @@
     </div>
     <style>
         .ori-banner-all-top h1{
-           display:none;	
-       }
-   </style>
-   <?php }} ?>
-   <div class="advisor-pop hidden-xs">
+         display:none;	
+     }
+ </style>
+ <?php }} ?>
+ <div class="advisor-pop hidden-xs">
     <div style="position:relative">
         <div class="close2"><i class="fa fa-times" aria-hidden="true"></i></div>
 
@@ -139,7 +141,10 @@
 <!--main script-->
 <script src="<?=PATH_URL?>asset/frontend/js/jquery.nice-select.min.js"></script>
 <script src="<?=PATH_URL?>asset/frontend/js/magnific-popup-master/jquery.magnific-popup.min.js"></script>
+
 <script src="<?=PATH_URL?>asset/frontend/js/main.js"></script>
+<script src="<?=PATH_URL?>asset/frontend/js/silder.js"></script>
+<script src="<?=PATH_URL?>asset/frontend/js/script.js"></script>
 <script type="text/javascript">
     $( window ).load(function() {
         var popup_status = $('#popup_status').val();
@@ -186,20 +191,20 @@
         var menu_id = <?=$menu_id;?>;
         $('header ul li').each(function(index, element) {
             if($(element).data('id') == menu_id) {
-             $(element).addClass('active');  
-         }
-     });
+               $(element).addClass('active');  
+           }
+       });
 
         $("#ori_scroll_menu").click(function(e) {
           if(menu_id != 6){
-             
+
           }else{
-             e.preventDefault();
-             $('html, body').animate({
-                scrollTop: $("#ori_scroll_ourtour").offset().top
-            }, 1000);
-         }
-     });
+           e.preventDefault();
+           $('html, body').animate({
+            scrollTop: $("#ori_scroll_ourtour").offset().top
+        }, 1000);
+       }
+   });
     });
 </script>
 <script>
@@ -212,16 +217,16 @@
   ga('send', 'pageview');
 
 </script>
- <script>
+<script>
 
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
- 
-ga('create', 'UA-103153930-1', 'auto');
-ga('send', 'pageview');
- 
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-103153930-1', 'auto');
+    ga('send', 'pageview');
+
 </script>
 </body>
 </html>

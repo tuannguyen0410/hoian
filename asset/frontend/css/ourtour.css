@@ -78,12 +78,19 @@
     font-size: 17px;
    
 }
+.content-tour p
+{
+	color:#000 !important;
+}
 .content-text
 {
 	margin: 10px 0;
 	color: #000;
 }
-
+.book-tour
+{
+	color:#000;
+}
 @media screen and (max-width: 767px)
 {
 .banner-title h1
