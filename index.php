@@ -293,7 +293,7 @@ define('USERNAME', '');
 define('PASSWORD', '');
 define('DATABASE', '');
 define('VIEWPATH', $view_folder);
-define('FOLDER', '/saigon/');
+define('FOLDER', '/hoian/');
 //// Database Information
 
 	define('PATH_URL','https://'.$_SERVER['HTTP_HOST'].FOLDER);
